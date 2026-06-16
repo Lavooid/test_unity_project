@@ -9,7 +9,7 @@ public class SpawnCoins : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(Spawn), 3f, 1f);
+        InvokeRepeating(nameof(Spawn), 3f, 5f);
     }
 
     // Update is called once per frame
@@ -20,9 +20,9 @@ public class SpawnCoins : MonoBehaviour
 
     void Spawn()
     {
-        Vector3 pos = new Vector3(Random.Range(-10f, 10f), 8, -2);
-        GameObject meteor = Instantiate(meteors[Random.Range(0, meteors.Length)], pos, Quaternion.identity);
+        Vector3 pos = new Vector3(Random.Range(-10f, 10f), Random.Range(-5f, 5f), -2);
+        GameObject t_coin = Instantiate(coin, pos, Quaternion.identity);
 
-        Destroy(meteor, 10f);
+        Destroy(t_coin, 5f);
     }
 }

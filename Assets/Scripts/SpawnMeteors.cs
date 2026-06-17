@@ -11,7 +11,7 @@ public class SpawnMeteors : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(Spawn), 3f, 1f);
+        InvokeRepeating(nameof(Spawn), 3f, 1.5f);
     }
 
     // Update is called once per frame

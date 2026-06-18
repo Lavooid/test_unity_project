@@ -21,18 +21,17 @@ public class KillPlayer : MonoBehaviour
     void Update()
     {
         if (DestroyPlayer.score == -1)
-        {
-            
-            sound.Play();
-                        
+        {     
             DestroyPlayer.score = 0;
+            sound.Play();
+            Invoke(nameof(LoadSceneF), 2f);
+            Time.timeScale = 1f;
         }
         
     }
 
-    IEnumerator Wait()
+    void LoadSceneF()
     {
-        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
 }

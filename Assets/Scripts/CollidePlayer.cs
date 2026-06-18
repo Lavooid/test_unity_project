@@ -7,6 +7,7 @@ public class DestroyPlayer : MonoBehaviour
 {
     public GameObject player;
     public static int score = 0;
+    public static int high_score = 0;
     AudioSource sound;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -35,6 +36,10 @@ public class DestroyPlayer : MonoBehaviour
             Debug.Log(score);
             Destroy(collision.gameObject);
             sound.Play();
+            if (score > high_score)
+            {
+                high_score = score;
+            }
         }
     }
 }
